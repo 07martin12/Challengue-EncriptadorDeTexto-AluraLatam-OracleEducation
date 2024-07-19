@@ -1,3 +1,3 @@
-<h1>Encriptador de texto</h1>
+<h1>Pagina del encriptador</h1>
 
 -Estado del proyecto: En construcción.
