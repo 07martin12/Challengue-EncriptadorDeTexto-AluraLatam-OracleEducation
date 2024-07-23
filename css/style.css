@@ -1,58 +1,158 @@
+/************************************************/
+/*
+*Diseño para mobile
+*/
+
 @media (max-width: 720px) {
 
     * {
         font-size: 100%;
     }
 
+    header div {
+        width: 33%;
+        height: 50%;
+    }
+
     .logo img {
         width: 100%;
-        height: 50px;
+        height: 50%;
     }
 
-    h2 {
-        text-align: center;
-    }
-
+    header,
+    h2,
     form {
         text-align: center;
     }
 
     form textarea {
         width: 80%;
-        height: 70px;
-        margin-top: 10px;
-        margin-bottom: 10px;
     }
 
+    .divOculto {
+        display: none;
+    }
+}
+
+/*************************************************/
+/*
+*Diseño para pc
+*/
+
+@font-face {
+    font-family: 'RobotoSlab';
+    src: url('fuentes/RobotoSlab-VariableFont_wght.ttf') format('truetype');
+}
+
+:root {
+    --color-azul: #0A3871;
+    --color-blanco: #F3F5FC;
+    --color-dorado: rgb(241, 196, 15);
+}
+
+* {
+    font-family: 'RobotoSlab';
+}
+
+body {
+    background-color: var(--color-blanco);
 }
 
 header,
+article,
 .botonesForm {
     display: flex;
     justify-content: space-around;
+}
+
+header,
+article {
     align-items: center;
+    background-color: var(--color-dorado);
 }
 
-header div {
-    width: 33%;
-    height: 50px;
-    text-align: center;
+.logo img {
+    height: 100px;
 }
 
-h2, ol {
+h2,
+ol {
     line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+label {
+    text-transform: uppercase;
+}
+
+form textarea {
+    width: 90%;
+    height: 70px;
+}
+
+
+footer,
+footer a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-azul);
+    margin-top: 10px;
+}
+
+header,
+article,
+.avisoError img,
+.botonesForm button,
+textarea {
+    border: 2px groove black;
+    border-radius: 30px;
+}
+
+.encriptador {
+    width: 90%;
     text-align: justify;
 }
 
-.divOculto {
-    display: none;
+.encriptador div {
+    margin-left: 10px;
 }
 
-footer {
+.avisoError {
     text-align: center;
 }
 
-footer div {
-    height: 25px;
+.avisoError img {
+    width: 55%;
+}
+
+.botonesForm button {
     margin-bottom: 10px;
+    padding: 10px;
+    padding-right: 15px;
+}
+
+textarea,
+.botonesForm button {
+    margin-top: 5px;
+    padding-left: 15px;
+}
+
+.btn-blue,
+.btn-white {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.btn-blue {
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+    border-color: black;
+}
+
+.btn-white {
+    background-color: var(--color-blanco);
+    color: var(--color-azul);
+    border-color: var(--color-azul);
 }
