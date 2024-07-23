@@ -4,6 +4,10 @@
         height: 140px;
     }
 
+    h1 {
+        font-size: 100%;
+    }
+
     h2 {
         text-align: center;
     }
