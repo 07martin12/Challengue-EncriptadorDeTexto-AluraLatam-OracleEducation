@@ -4,6 +4,7 @@ const btnCifrado = document.querySelector("#btn-cifrado");
 btnCifrado.addEventListener('click', cifrarTexto);
 const btnDesifrado = document.querySelector("#btn-descifrado");
 btnDesifrado.addEventListener('click', decifrarTexto);
+const btnCopiar = document.querySelector("#btn-copiar");
 const textoIngresado = document.querySelector("#valorEncriptado");
 
 const respuesta = document.querySelector(".respuesta");
@@ -11,7 +12,6 @@ const imgError = document.querySelector(".avisoError");
 const formatoIncorrecto = document.querySelector(".formatoIncorrecto");
 const mensaje = document.createElement('p');
 mensaje.innerHTML = "el texto ingresado solo debe contener letras minusculas";
-
 
 const llavesDeEncriptacion = ["ai", "enter", "imes", "ober", "ufat"];
 const valoresEncriptados = ["a", "e", "i", "o", "u"];
@@ -26,29 +26,37 @@ function cifrarTexto() {
         pos = 0,
         valorEncriptado = false;
 
-    if (formatoCorrecto(texto)) {
-        for (let i = 0; i < texto.length; i++) {
-            for (let j = 0; j < valoresEncriptados.length; j++) {
-                if (texto[i] === valoresEncriptados[j]) {
-                    pos = j;
-                    valorEncriptado = true;
+    if (texto != "") {
+
+        if (formatoCorrecto(texto)) {
+            for (let i = 0; i < texto.length; i++) {
+                for (let j = 0; j < valoresEncriptados.length; j++) {
+                    if (texto[i] === valoresEncriptados[j]) {
+                        pos = j;
+                        valorEncriptado = true;
+                    }
+                }
+                if (valorEncriptado === true) {
+                    textoCifrado += llavesDeEncriptacion[pos];
+                    valorEncriptado = false;
+                } else {
+                    textoCifrado += texto[i];
                 }
             }
-            if (valorEncriptado === true) {
-                textoCifrado += llavesDeEncriptacion[pos];
-                valorEncriptado = false;
-            } else {
-                textoCifrado += texto[i];
-            }
+
+            imgError.classList.add("divOculto");
+            mensaje.innerHTML = textoCifrado;
+            respuesta.appendChild(mensaje);
+            respuesta.classList.remove("divOculto");
+            btnCopiar.classList.remove("divOculto");
+            
+        } else {
+            mensaje.innerHTML = "el texto ingresado solo debe contener letras minusculas";
+            formatoIncorrecto.appendChild(mensaje);
+            formatoIncorrecto.classList.remove("divOculto");
         }
-        imgError.classList.add("divOculto");
-        mensaje.innerHTML = textoCifrado;
-        respuesta.appendChild(mensaje)
-        respuesta.classList.remove("divOculto");
     } else {
-        mensaje.innerHTML = "el texto ingresado solo debe contener letras minusculas";
-        formatoIncorrecto.appendChild(mensaje);
-        formatoIncorrecto.classList.remove("divOculto");
+        imgError.classList.remove("imgOculta");
     }
 }
 
@@ -84,6 +92,7 @@ function decifrarTexto() {
         mensaje.innerHTML = texto;
         respuesta.appendChild(mensaje)
         respuesta.classList.remove("divOculto");
+        btnCopiar.classList.remove("divOculto");
     } else {
         mensaje.innerHTML = "el texto ingresado solo debe contener letras minusculas";
         formatoIncorrecto.appendChild(mensaje);
@@ -104,35 +113,11 @@ function obtenerLlave(llaveEncriptacion, pos, texto) {
 function formatoCorrecto(texto) {
     let esMinuscula = true;
 
-    if (texto != "") {
-        for (let i = 0; i < texto.length; i++) {
-            if (!(texto[i] >= "a" && texto[i] <= "z") && texto[i] !== " ") {
-                esMinuscula = false;
-            }
+    for (let i = 0; i < texto.length; i++) {
+        if (!(texto[i] >= "a" && texto[i] <= "z") && texto[i] !== " " && texto[i] != "ñ") {
+            esMinuscula = false;
         }
-    } else {
-        esMinuscula = false;
     }
-
 
     return esMinuscula;
 }
-
-
-
-/*
-* reglas:
-*
-*
-* Un botón que copie el texto encriptado/desencriptado para la sección de transferencia, 
-* o sea que tenga la misma funcionalidad del ctrl+C o de la opción "copiar" del menú de 
-*las aplicaciones.
-*/
-
-
-
-
-
-
-
-

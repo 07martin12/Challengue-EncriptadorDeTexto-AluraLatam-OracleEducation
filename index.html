@@ -4,17 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Encriptador de texto</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header>
-        <div class="logo"><img src="css/imagenes/logoEncriptador.webp" alt="logoEncriptador"></div>
+        <div class="logo">
+            <img src="css/imagenes/logoEncriptador.webp" alt="logoEncriptador">
+        </div>
         <div>
             <h1>encriptador de texto</h1>
         </div>
-        <div class="logo"><img src="css/imagenes/2°logoEncriptador.png" alt="logoEncriptador"></div>
+        <div class="logo">
+            <img src="css/imagenes/2°logoEncriptador.png" alt="logoEncriptador">
+        </div>
     </header>
 
     <main>
@@ -37,31 +41,31 @@
                     </div>
 
                     <div>
-                        <form >
-                            <div><label for="textoModificado">ingrese el texto que va a modificar</label></div>
+                        <form>
+                            <div><label for="textoModificado">ingrese el texto que desea modificar</label></div>
                             <div><textarea id="valorEncriptado" name="textoModificado"
                                     placeholder="por ejemplo: 'me gusta programar'"></textarea>
                             </div>
                             <div class="formatoIncorrecto divOculto"></div>
                             <div class="botonesForm">
                                 <div><button type="button" id="btn-cifrado" class="btn-blue">cifrar</button></div>
-                                <div><button type="button" id="btn-descifrado" class="btn-white">descifrar</button></div>
+                                <div><button type="button" id="btn-descifrado" class="btn-white">descifrar</button>
+                                </div>
                             </div>
                     </div>
                 </div>
                 </form>
 
-                <div class="avisoError"><img src="css/imagenes/avisoError.png" alt="avisoError"></div>
-
-                <div class="respuesta divOculto"></div>
-                <!--
-                    <div class="botonesForm">
-                        <div><button class="btn-blue">copiar</button></div>
-                        <div><button class="btn-white">borrar</button></div>
-                    </div>
-                    -->
+                <div class="avisoError imgOculta">
+                    <img src="css/imagenes/avisoError.png" alt="avisoError">
                 </div>
+
+                <div class="respuesta divOculto">
+                    <button id="btn-copiar" class="btn-black divOculto">copiar</button>
+                </div>
+                
             </article>
+
     </main>
 
     <footer>
