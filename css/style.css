@@ -28,10 +28,6 @@
     form textarea {
         width: 80%;
     }
-
-    .divOculto {
-        display: none;
-    }
 }
 
 /*************************************************/
@@ -48,6 +44,7 @@
     --color-azul: #0A3871;
     --color-blanco: #F3F5FC;
     --color-dorado: rgb(241, 196, 15);
+    --color-rojo: rgb(220, 53, 69); 
 }
 
 * {
@@ -155,4 +152,13 @@ textarea,
     background-color: var(--color-blanco);
     color: var(--color-azul);
     border-color: var(--color-azul);
+}
+
+.divOculto {
+    display: none;
+}
+
+.formatoIncorrecto {
+    color: var(--color-rojo); 
+    font-size:smaller;
 }

@@ -37,25 +37,29 @@
                     </div>
 
                     <div>
-                        <form>
-                            <div><label for="textoModificado">ingrese el texto a modificar</label></div>
+                        <form >
+                            <div><label for="textoModificado">ingrese el texto que va a modificar</label></div>
                             <div><textarea id="valorEncriptado" name="textoModificado"
-                                    placeholder="por ejemplo: 'soy un buen programador'"></textarea>
+                                    placeholder="por ejemplo: 'me gusta programar'"></textarea>
                             </div>
+                            <div class="formatoIncorrecto divOculto"></div>
                             <div class="botonesForm">
-                                <div><button class="btn-blue">cifrar</button></div>
-                                <div><button class="btn-white">descifrar</button></div>
+                                <div><button type="button" id="btn-cifrado" class="btn-blue">cifrar</button></div>
+                                <div><button type="button" id="btn-descifrado" class="btn-white">descifrar</button></div>
                             </div>
-                        </form>
                     </div>
                 </div>
+                </form>
 
-                <div class="avisoError divOculto"><img src="css/imagenes/avisoError.png" alt="avisoError"></div>
-                <div class="divOculto">
-                    <!--     <div class="botonesForm">
+                <div class="avisoError"><img src="css/imagenes/avisoError.png" alt="avisoError"></div>
+
+                <div class="respuesta divOculto"></div>
+                <!--
+                    <div class="botonesForm">
                         <div><button class="btn-blue">copiar</button></div>
                         <div><button class="btn-white">borrar</button></div>
-                    </div>-->
+                    </div>
+                    -->
                 </div>
             </article>
     </main>
@@ -66,6 +70,7 @@
         <em>&copy;2024 - Algunos derechos reservados</em>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 
 </html>
