@@ -4,14 +4,15 @@ const btnCifrado = document.querySelector("#btn-cifrado");
 btnCifrado.addEventListener('click', cifrarTexto);
 const btnDesifrado = document.querySelector("#btn-descifrado");
 btnDesifrado.addEventListener('click', decifrarTexto);
-const btnCopiar = document.querySelector("#btn-copiar");
+
 const textoIngresado = document.querySelector("#valorEncriptado");
 
-const respuesta = document.querySelector(".respuesta");
 const imgError = document.querySelector(".avisoError");
+const respuesta = document.querySelector(".respuesta");
+const divRespuesta = document.querySelector(".divRespuesta");
+
 const formatoIncorrecto = document.querySelector(".formatoIncorrecto");
 const mensaje = document.createElement('p');
-mensaje.innerHTML = "el texto ingresado solo debe contener letras minusculas";
 
 const llavesDeEncriptacion = ["ai", "enter", "imes", "ober", "ufat"];
 const valoresEncriptados = ["a", "e", "i", "o", "u"];
@@ -20,7 +21,6 @@ let texto = "";
 
 function cifrarTexto() {
     texto = textoIngresado.value;
-    mensaje.innerHTML = "";
 
     let textoCifrado = "",
         pos = 0,
@@ -43,13 +43,10 @@ function cifrarTexto() {
                     textoCifrado += texto[i];
                 }
             }
-
+            formatoIncorrecto.classList.add("divOculto");
             imgError.classList.add("divOculto");
-            mensaje.innerHTML = textoCifrado;
-            respuesta.appendChild(mensaje);
-            respuesta.classList.remove("divOculto");
-            btnCopiar.classList.remove("divOculto");
-            
+            respuesta.innerHTML = textoCifrado;
+            divRespuesta.classList.remove("divOculto");
         } else {
             mensaje.innerHTML = "el texto ingresado solo debe contener letras minusculas";
             formatoIncorrecto.appendChild(mensaje);
@@ -61,6 +58,7 @@ function cifrarTexto() {
 }
 
 function decifrarTexto() {
+
     texto = textoIngresado.value;
     mensaje.innerHTML = "";
 
@@ -69,34 +67,37 @@ function decifrarTexto() {
         llaveTexto = "";
     let pos = 0;
 
-    if (formatoCorrecto(texto)) {
-        for (let j = 0; j < llavesDeEncriptacion.length; j++) {
-            llaveEncriptacion = llavesDeEncriptacion[j];
+    if (texto != "") {
+        if (formatoCorrecto(texto)) {
+            for (let j = 0; j < llavesDeEncriptacion.length; j++) {
+                llaveEncriptacion = llavesDeEncriptacion[j];
 
-            while (pos < texto.length) {
-                llaveTexto = obtenerLlave(llaveEncriptacion, pos, texto);
+                while (pos < texto.length) {
+                    llaveTexto = obtenerLlave(llaveEncriptacion, pos, texto);
 
-                if (llaveEncriptacion === llaveTexto) {
-                    textoDecifrado += valoresEncriptados[j];
-                    pos += llaveEncriptacion.length;
-                } else {
-                    textoDecifrado += texto[pos];
-                    pos++;
+                    if (llaveEncriptacion === llaveTexto) {
+                        textoDecifrado += valoresEncriptados[j];
+                        pos += llaveEncriptacion.length;
+                    } else {
+                        textoDecifrado += texto[pos];
+                        pos++;
+                    }
                 }
+                pos = 0;
+                texto = textoDecifrado;
+                textoDecifrado = "";
             }
-            pos = 0;
-            texto = textoDecifrado;
-            textoDecifrado = "";
+            formatoIncorrecto.classList.add("divOculto");
+            imgError.classList.add("divOculto");
+            respuesta.innerHTML = texto;
+            divRespuesta.classList.remove("divOculto");
+        } else {
+            mensaje.innerHTML = "el texto ingresado solo debe contener letras minusculas";
+            formatoIncorrecto.appendChild(mensaje);
+            formatoIncorrecto.classList.remove("divOculto");
         }
-        imgError.classList.add("divOculto");
-        mensaje.innerHTML = texto;
-        respuesta.appendChild(mensaje)
-        respuesta.classList.remove("divOculto");
-        btnCopiar.classList.remove("divOculto");
     } else {
-        mensaje.innerHTML = "el texto ingresado solo debe contener letras minusculas";
-        formatoIncorrecto.appendChild(mensaje);
-        formatoIncorrecto.classList.remove("divOculto");
+        imgError.classList.remove("imgOculta");
     }
 }
 
