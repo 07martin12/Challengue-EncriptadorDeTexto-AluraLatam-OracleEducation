@@ -35,8 +35,7 @@ Luego de clonar el repositorio el usuario debe entrar a la carpeta descargada y 
 El diseño de la pagina web a sido adaptado tanto para computadoras como para mobiles y los diseños se muestran a continuación:
 
 -diseño Mobile 
-![Diseño en Móvil](diseños/diseñoMobile.png)
 <img src="diseños/diseñoMobile.png" alt="Diseño en Móvil" width="300" />
 -diseño PC
-<img src="diseños/diseñoPC.png" alt="Diseño en PC" width="300" />
+<img src="diseños/diseñoPc.png" alt="Diseño en PC" width="300" />
 
