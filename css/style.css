@@ -133,7 +133,7 @@ footer,
 
 .botonesForm button,
 .divEncriptador form textarea,
-.btn-black button {
+.btn-black button, .respuesta {
     padding-left: 15px;
 }
 
