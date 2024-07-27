@@ -204,7 +204,7 @@ footer a {
 }
 
 /*
-*  Diseño para mobile
+*  Diseño para mobilea
 */
 @media (max-width: 720px) {
 
@@ -212,7 +212,9 @@ footer a {
         font-size: 100%;
     }
 
-    header div, .divRespuesta div {
+    header div,
+    .divRespuesta div,
+    .avisoError img {
         width: 33%;
         height: 50%;
     }
@@ -222,13 +224,14 @@ footer a {
     }
 
     .logo img,
-    .divRespuesta, 
-    .divEncriptador {
+    .divRespuesta,
+    .divEncriptador,
+    .avisoError {
         width: 100%;
     }
 
     header,
-    h2, 
+    h2,
     form {
         text-align: center;
     }
@@ -237,11 +240,11 @@ footer a {
         width: 70%;
     }
 
-    article{
+    article {
         display: block;
     }
 
-    .divRespuesta, 
+    .divRespuesta,
     .divRespuesta textarea {
         display: flex;
         justify-content: center;
@@ -250,7 +253,7 @@ footer a {
         margin-bottom: 15px;
     }
 
-    .imgOculta, 
+    .imgOculta,
     .divOculto {
         display: none;
     }
