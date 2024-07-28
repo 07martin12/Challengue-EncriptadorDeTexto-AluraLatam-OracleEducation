@@ -29,7 +29,7 @@ El acceso a la página web es publico y se brinda mediante los sistemas de aloja
 
 Luego de clonar el repositorio el usuario debe entrar a la carpeta descargada y abrir finalmente el archivo index.html en el navegador web que este siendo utilizado. 
 
--link de vercel
+-link de vercel : https://challengue-encriptador-de-texto-alura-latam-oracle-education.vercel.app/
 -link de github pages
 
 El diseño de la pagina web a sido adaptado tanto para computadoras como para mobiles y los diseños se muestran a continuación:
