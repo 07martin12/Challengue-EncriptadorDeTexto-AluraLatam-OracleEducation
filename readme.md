@@ -38,4 +38,4 @@ El diseño de la pagina web a sido adaptado tanto para computadoras como para mo
 <img src="diseños/diseñoPc.png" alt="Diseño en Pc" width="500" />
 
 ## Diseño Mobile
-<img src="diseños/diseñoMobile.png" alt="Diseño en Móvil" width="300" />
+<img src="diseños/diseñoMobile.png" alt="Diseño en Móvil" width="300" /> 
